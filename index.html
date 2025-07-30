@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr tech</title>
+
+    <!-- Tipografía moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* Fondo con gradiente superpuesto */
+        #productos {
+            position: relative;
+            background-image: url('https://img.freepik.com/foto-gratis/pared-azul-pastel-fondo-producto-suelo-madera_15662575.htm');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            color: white;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        #productos::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+            z-index: -1;
+        }
+
+        /* Tarjetas flotantes */
+        .card {
+            background-color: rgba(174, 230, 240, 0.541);
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            backdrop-filter: blur(4px);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .icon {
+            width: 40px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        #contacto {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            color: #2a4d69;
+        }
+
+        body {
+            background-color: #e6f0f3; /* Fondo minimalista tecnológico */
+            color: #295288;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 10px;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2a4d69;
+        }
+
+        .icon {
+            width: 40px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        
+    </style>
+</head>
+
+<head>
+    <style>
+        #productos {
+    position: relative;
+    background-image: url('https://img.freepik.com/foto-gratis/pared-azul-pastel-fondo-producto-suelo-madera_15662575.htm');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#productos::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    z-index: -1;
+}
+
+/* Agrega al final del bloque <style> */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #productos {
+        padding: 40px 10px;
+    }
+
+    .card {
+        margin: 15px 10px;
+        padding: 16px;
+        max-width: 100%;
+    }
+
+    .icon {
+        width: 32px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <section id="productos">
+        <h2>Productos</h2>
+        <p>Información sobre nuestros sistemas de seguridad avanzados, incluyendo cámaras, sensores y alarmas inteligentes.</p>
+
+<div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/841/841365.png" alt="Cámara de seguridad" class="icon">
+        <p>Sistema de cámaras con inteligencia artificial para vigilancia en tiempo real.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913466.png" alt="Sensor de movimiento" class="icon">
+        <p>Sensores de movimiento con alerta móvil instantánea.</p>
+    </div>
+
+
+    </section>
+
+    <section id="contacto">
+        <h2>Contáctanos
+        </h2>
+        <p>Escríbenos a <strong>mrtech@tusolucion.com</strong> o llámanos al <strong>(01) 234-5678</strong>. También puedes encontrarnos en nuestras redes sociales.</p>
+
+        <form onsubmit="return validarFormulario()" style="margin-top: 30px;">
+        <input type="text" id="nombre" placeholder="Tu nombre" required><br><br>
+        <input type="email" id="email" placeholder="Tu correo" required><br><br>
+        <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea><br><br>
+        <button type="submit">Enviar</button>
+        </form>
+
+    </section>
+
+<script>
+    function validarFormulario() {
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+
+        if (!nombre || !email || !mensaje) {
+            alert("Por favor, completa todos los campos.");
+            return false;
+        }
+        alert("Mensaje enviado con éxito 🚀");
+        return true;
+    }
+</script>
+
+</body>
+</html>
